@@ -1,3 +1,60 @@
+:root {
+    /* ===================== Police ===================== */
+    --font-main:            'Pridi', Georgia, 'Times New Roman', serif;
+
+    /* ===================== Fonds ===================== */
+    --bg-page:              #1E142B;
+    --bg-orb:               #5C3A87;
+
+    /* ===================== Cartes / Conteneurs ===================== */
+    --card-bg:              #34224C;
+    --card-border:          #8E93A1;
+    --separator:            #54427A;
+
+    /* ===================== Tags / Filtres / Badges ===================== */
+    --tag-bg:               #462D67;
+    --tag-border:           #6A6084;
+    --filter-active-bg:     #5C3A87;
+
+    /* ===================== Textes ===================== */
+    --text-title:           #FFFFFF;
+    --text-secondary:       #8E93A1;
+
+    /* ===================== Boutons ===================== */
+    --btn-bg:               #FFFFFF;
+    --btn-text:             #1E142B;
+    --btn-outline:          #FFFFFF;
+
+    /* ===================== Formes ===================== */
+    --radius-card:          16px;
+    --radius-btn:           8px;
+    --radius-pill:          999px;
+
+    /* ===================== Mise en page ===================== */
+    --container-width:      1420px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
 body {
-    font-family: Pridi;
+    font-family: var(--font-main);
+    color: var(--text-title);
+    display: flex;
+    width: 100vh;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    background-color: var(--bg-page);
+    background-image: 
+        radial-gradient(circle at 20% 20%, var(--bg-orb) 0%, transparent 40%),
+        radial-gradient(circle at 70% 50%, var(--bg-orb) 0%, transparent 50%),
+        radial-gradient(circle at 30% 90%, var(--bg-orb) 0%, transparent 40%);
+    background-attachment: fixed;
 }
