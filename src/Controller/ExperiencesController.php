@@ -11,8 +11,6 @@ final class ExperiencesController extends AbstractController
     #[Route('/experiences', name: 'app_experiences')]
     public function index(): Response
     {
-        return $this->render('experiences/index.html.twig', [
-            'controller_name' => 'ExperiencesController',
-        ]);
+        return $this->render('experiences/index.html.twig');
     }
 }
