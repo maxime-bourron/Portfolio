@@ -1,20 +1,81 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Maxime Bourron{% endblock %}
+{% block title %}Portfolio - Maxime Bourron{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<main>
+    <div class="presentation">
+        <div class="presentation-text">
+            <div class="presentation-title">
+                <h1>Salut, moi c'est {{ profil.prenom }}</h1>
+                <p class="accroche">{{ profil.accroche }}</p>
+            </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <div class="presentation-description">
+                <p>{{ profil.presentation }}</p>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/m.bourron/Desktop/Portfolio/src/Controller/AccueilController.php</code></li>
-        <li>Your template at <code>C:/Users/m.bourron/Desktop/Portfolio/templates/accueil/index.html.twig</code></li>
-    </ul>
-</div>
+            <div class="presentation-action">
+                <a href="#">Mon CV</a>
+                <a href="#">Me contacter</a>
+            </div>
+        </div>
+        <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de profil" class="presentation-img">
+    </div>
+
+    <div class="line"></div>
+
+    <div class="information">
+        <h2>Informations</h2>
+        <div class="information-detail">
+            <div class="information-detail-item">
+                <h3>Parcours</h3>
+                <p>{{ profil.parcours }}</p>
+            </div>
+
+            <div class="information-detail-item">
+                <h3>Objectif</h3>
+                <p>{{ profil.objectif }}</p>
+            </div>
+
+            <div class="information-detail-item">
+                <h3>Perspectives</h3>
+                <p>{{ profil.perspectives }}</p>
+            </div>
+        </div>
+        <div class="information-cards">
+            <div class="carte-profil">
+                <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de {{ profil.prenom }} {{ profil.nom }}" class="carte-profil-photo">
+
+                <h3 class="carte-profil-nom">{{ profil.prenom }} {{ profil.nom }}</h3>
+                <p class="carte-profil-titre">Étudiant BTS SIO SLAM</p>
+                <p class="carte-profil-ville">{{ profil.ville }}</p>
+
+                <div class="carte-profil-liens">
+                    <a href="{{ profil.urlGithub }}" target="_blank" rel="noopener noreferrer" aria-label="Mon GitHub">
+                        <img src="{{ asset('images/icones/github.svg') }}" alt="">
+                    </a>
+
+                    <a href="{{ profil.urlLinkedin }}" target="_blank" rel="noopener noreferrer" aria-label="Mon LinkedIn">
+                        <img src="{{ asset('images/icones/linkedin.svg') }}" alt="">
+                    </a>
+                </div>
+
+                <a href="#" class="carte-profil-contact">Me contacter</a>
+            </div>
+
+            <div>
+                <h3>Études</h3>
+                <img src="{{ asset('images/' ~ profil.logoEtudes) }}" alt="Études actuelles">
+                <p>{{ profil.statutEtudes }}</p>
+            </div>
+
+            <div>
+                <h3>Travail</h3>
+                <img src="{{ asset('images/' ~ profil.logoTravail) }}" alt="Emploi actuel">
+                <p>{{ profil.statutTravail }}</p>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}
