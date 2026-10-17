@@ -37,6 +37,7 @@
     /* ===================== Header / Navigation ===================== */
     --header-bg:            rgba(30, 20, 43, 0.85);
     --nav-underline:        #FFFFFF;
+    --nav-mobile-bg:        rgba(30, 20, 43, 0.97);
 
     /* ===================== Boutons ===================== */
     --btn-bg:               #FFFFFF;

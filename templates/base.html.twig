@@ -23,25 +23,25 @@
         {% endif %}
     </head>
     <body>
-        <header>
+        <header data-controller="header" data-action="scroll@window->header#update">
             <a href="{{ path('app_accueil') }}">
                 <div class="name">
                     <p>Maxime Bourron</p>
                 </div>
             </a>
 
-            <div class="burger-menu" id="burger-menu">
+            <button type="button" class="burger-menu" aria-label="Ouvrir le menu" data-header-target="burger" data-action="click->header#toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
-            <nav id="nav-menu">
-                <a href="{{ path('app_accueil') }}" class="nav-link">Accueil</a>
-                <a href="{{ path('app_formations') }}" class="nav-link">Formations</a>
-                <a href="{{ path('app_experiences') }}" class="nav-link">Expériences</a>
-                <a href="{{ path('app_projets') }}" class="nav-link">Projets</a>
-                <a href="{{ path('app_veilles') }}" class="nav-link">Veilles</a>
+            <nav data-header-target="nav">
+                <a href="{{ path('app_accueil') }}" class="nav-link {{ app.current_route == 'app_accueil' ? 'active' : '' }}" data-action="click->header#close">Accueil</a>
+                <a href="{{ path('app_formations') }}" class="nav-link {{ app.current_route == 'app_formations' ? 'active' : '' }}" data-action="click->header#close">Formations</a>
+                <a href="{{ path('app_experiences') }}" class="nav-link {{ app.current_route == 'app_experiences' ? 'active' : '' }}" data-action="click->header#close">Expériences</a>
+                <a href="{{ path('app_projets') }}" class="nav-link {{ app.current_route == 'app_projets' ? 'active' : '' }}" data-action="click->header#close">Projets</a>
+                <a href="{{ path('app_veilles') }}" class="nav-link {{ app.current_route == 'app_veilles' ? 'active' : '' }}" data-action="click->header#close">Veilles</a>
             </nav>
         </header>
 
