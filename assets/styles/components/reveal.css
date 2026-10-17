@@ -1,9 +1,17 @@
+/* ==========================================================================
+    Reveal
+    Apparition des blocs au défilement, classes ajoutées par reveal_controller.js
+   ========================================================================== */
+
+/* ---------- État caché ---------- */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+
+/* ---------- État visible ---------- */
 .reveal.visible {
     opacity: 1;
     transform: none;

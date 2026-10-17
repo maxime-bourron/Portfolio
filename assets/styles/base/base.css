@@ -1,7 +1,15 @@
+/* ==========================================================================
+    Base
+    Réglages globaux de la page et du contenu principal
+   ========================================================================== */
+
+/* ---------- Réinitialisation ---------- */
 * {
     box-sizing: border-box;
 }
 
+
+/* ---------- Page ---------- */
 body {
     font-family: var(--font-main);
     color: var(--text-title);
@@ -17,6 +25,8 @@ body {
         radial-gradient(circle at 30% 90%, var(--bg-orb) 0%, transparent 40%);
 }
 
+
+/* ---------- Contenu principal ---------- */
 main {
     display: flex;
     max-width: var(--container-width);
@@ -25,4 +35,12 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 150px;
+}
+
+
+/* ---------- Séparateur ---------- */
+.line {
+    width: 100%;
+    height: 1px;
+    background: var(--card-border);
 }

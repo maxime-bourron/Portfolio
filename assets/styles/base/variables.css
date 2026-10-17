@@ -1,54 +1,70 @@
+/* ==========================================================================
+    Variables
+    Couleurs, typographie, formes et largeur du site
+   ========================================================================== */
+
 :root {
-    /* ===================== Police ===================== */
+    /* ---------- Police ---------- */
     --font-main:            'Pridi', Georgia, 'Times New Roman', serif;
 
-    /* ===================== Fonds ===================== */
+
+    /* ---------- Fonds ---------- */
     --bg-page:              #1E142B;
     --bg-orb:               #5C3A87;
 
-    /* ===================== Cartes / Conteneurs ===================== */
+
+    /* ---------- Cartes et conteneurs ---------- */
     --card-bg:              #34224C;
     --card-border:          #8E93A1;
     --separator:            #54427A;
 
-    /* ===================== Tags / Filtres / Badges ===================== */
+
+    /* ---------- Tags, filtres et badges ---------- */
     --tag-bg:               #462D67;
     --tag-border:           #6A6084;
     --filter-active-bg:     #5C3A87;
 
-    /* ===================== Textes ===================== */
+
+    /* ---------- Textes ---------- */
     --text-title:           #FFFFFF;
     --text-secondary:       #8E93A1;
     --text-body:            #ADADAD;
 
-    /* ===================== Typographie ===================== */
-    --fs-h1:          clamp(2.25rem, 3.33vw, 4rem);
-    --fs-h2:          clamp(1.75rem, 2.5vw, 3rem);
-    --fs-h3:          clamp(1.375rem, 1.875vw, 2.25rem);
-    --fs-logo:        clamp(1.5rem, 2.08vw, 2.5rem);
-    --fs-accroche:    clamp(1.25rem, 1.67vw, 2rem);
-    --fs-body:        clamp(1rem, 1.25vw, 1.5rem);
 
-    --fs-card-title:  1.25rem;
-    --fs-small:       0.9375rem;
-    --fs-meta:        0.875rem;
-    --fs-footer:      1rem;
+    /* ---------- Tailles de texte ---------- */
+    /* Tailles fluides : minimum, valeur selon l'écran, maximum */
+    --fs-h1:                clamp(2.25rem, 3.33vw, 4rem);
+    --fs-h2:                clamp(1.75rem, 2.5vw, 3rem);
+    --fs-h3:                clamp(1.375rem, 1.875vw, 2.25rem);
+    --fs-logo:              clamp(1.5rem, 2.08vw, 2.5rem);
+    --fs-accroche:          clamp(1.25rem, 1.67vw, 2rem);
+    --fs-body:              clamp(1rem, 1.25vw, 1.5rem);
 
-    /* ===================== Header / Navigation ===================== */
+    /* Tailles fixes */
+    --fs-card-title:        1.25rem;
+    --fs-small:             0.9375rem;
+    --fs-meta:              0.875rem;
+    --fs-footer:            1rem;
+
+
+    /* ---------- Header et navigation ---------- */
     --header-bg:            rgba(30, 20, 43, 0.85);
     --nav-underline:        #FFFFFF;
     --nav-mobile-bg:        rgba(30, 20, 43, 0.97);
 
-    /* ===================== Boutons ===================== */
+
+    /* ---------- Boutons ---------- */
     --btn-bg:               #FFFFFF;
     --btn-text:             #1E142B;
     --btn-outline:          #FFFFFF;
 
-    /* ===================== Formes ===================== */
+
+    /* ---------- Arrondis ---------- */
     --radius-card:          16px;
     --radius-btn:           8px;
     --radius-pill:          999px;
 
-    /* ===================== Mise en page ===================== */
+
+    /* ---------- Mise en page ---------- */
     --container-width:      1420px;
 }

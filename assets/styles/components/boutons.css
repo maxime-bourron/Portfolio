@@ -1,4 +1,9 @@
-/* ========== Boutons ========== */
+/* ==========================================================================
+    Boutons
+    Bouton de base et ses deux variantes : plein et contour
+   ========================================================================== */
+
+/* ---------- Bouton de base ---------- */
 .bouton {
     display: inline-flex;
     align-items: center;
@@ -11,6 +16,8 @@
     transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+
+/* ---------- Variantes ---------- */
 .bouton-plein {
     background: var(--btn-bg);
     color: var(--btn-text);
@@ -21,6 +28,8 @@
     color: var(--btn-outline);
 }
 
+
+/* ---------- Survol et focus ---------- */
 .bouton-plein:hover {
     background: transparent;
     color: var(--btn-outline);
