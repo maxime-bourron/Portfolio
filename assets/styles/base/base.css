@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-title);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    background-color: var(--bg-page);
+    background-image:
+        radial-gradient(circle at 20% 20%, var(--bg-orb) 0%, transparent 40%),
+        radial-gradient(circle at 70% 50%, var(--bg-orb) 0%, transparent 50%),
+        radial-gradient(circle at 30% 90%, var(--bg-orb) 0%, transparent 40%);
+}
+
+main {
+    display: flex;
+    max-width: var(--container-width);
+    width: 100%;
+    padding: 150px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 150px;
+}

@@ -1,0 +1,6 @@
+.accroche {
+    font-size: var(--fs-accroche);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-title);
+}

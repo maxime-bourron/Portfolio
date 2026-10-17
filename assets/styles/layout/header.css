@@ -1,0 +1,77 @@
+header {
+    display: flex;
+    width: 100%;
+    max-width: var(--container-width);
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 10px;
+
+    z-index: 1000;
+
+    background: transparent;
+    padding: 30px 15px;
+    border-radius: 15px;
+    transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+header.header-active {
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+}
+
+header .name {
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.name p {
+    font-size: var(--fs-logo);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-title);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+
+    color: var(--text-title);
+    font-size: var(--fs-body);
+    font-weight: 500;
+    padding-bottom: 4px;
+
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--nav-underline);
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
