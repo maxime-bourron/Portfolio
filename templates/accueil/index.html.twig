@@ -5,7 +5,7 @@
 {% block body %}
 <main>
     <div class="presentation">
-        <div class="presentation-text">
+        <div class="presentation-text" data-controller="reveal">
             <div class="presentation-title">
                 <h1>Salut, moi c'est <span class="texte-degrade">{{ profil.prenom }}</span></h1>
                 <p class="accroche">{{ profil.accroche }}</p>
@@ -20,7 +20,7 @@
                 <a href="#" class="bouton bouton-contour">Me contacter</a>
             </div>
         </div>
-        <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de profil" class="presentation-img">
+        <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de profil" class="presentation-img" data-controller="reveal">
     </div>
 
     <div class="line"></div>
@@ -28,23 +28,23 @@
     <div class="information">
         <h2>Informations</h2>
         <div class="information-detail">
-            <div class="information-detail-item">
+            <div class="information-detail-item" data-controller="reveal">
                 <h3>Parcours</h3>
                 <p>{{ profil.parcours }}</p>
             </div>
 
-            <div class="information-detail-item">
+            <div class="information-detail-item" data-controller="reveal">
                 <h3>Objectif</h3>
                 <p>{{ profil.objectif }}</p>
             </div>
 
-            <div class="information-detail-item">
+            <div class="information-detail-item" data-controller="reveal">
                 <h3>Perspectives</h3>
                 <p>{{ profil.perspectives }}</p>
             </div>
         </div>
         <div class="information-cards">
-            <div class="carte-profil">
+            <div class="carte-profil" data-controller="reveal">
                 <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de {{ profil.prenom }} {{ profil.nom }}" class="profil-img">
                 <h3 class="carte-profil-nom">{{ profil.prenom }} {{ profil.nom }}</h3>
 
@@ -59,13 +59,13 @@
                 </div>
             </div>
 
-            <div class="carte-info">
+            <div class="carte-info" data-controller="reveal">
                 <h3>Études</h3>
                 <img src="{{ asset('images/' ~ profil.logoEtudes) }}" alt="Études actuelles" class="carte-logo">
                 <p>{{ profil.statutEtudes }}</p>
             </div>
 
-            <div class="carte-info">
+            <div class="carte-info" data-controller="reveal">
                 <h3>Travail</h3>
                 <img src="{{ asset('images/' ~ profil.logoTravail) }}" alt="Emploi actuel" class="carte-logo">
                 <p>{{ profil.statutTravail }}</p>
