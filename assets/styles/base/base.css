@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
+    padding-inline: var(--page-gutter);
 
     background-color: var(--bg-page);
     background-image:
@@ -43,4 +44,13 @@ main {
     width: 100%;
     height: 1px;
     background: var(--card-border);
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    main {
+        padding: 100px 0;
+        gap: 100px;
+    }
 }

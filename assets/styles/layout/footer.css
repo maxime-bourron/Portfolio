@@ -26,4 +26,5 @@ footer {
 footer p {
     font-size: var(--fs-footer);
     color: var(--text-title);
+    text-align: center;
 }

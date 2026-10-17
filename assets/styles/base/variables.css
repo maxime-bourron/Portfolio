@@ -67,4 +67,5 @@
 
     /* ---------- Mise en page ---------- */
     --container-width:      1420px;
+    --page-gutter:          clamp(16px, 4vw, 40px);
 }
