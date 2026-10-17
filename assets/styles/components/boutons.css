@@ -1,0 +1,37 @@
+/* ========== Boutons ========== */
+.bouton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    border: 1px solid var(--btn-outline);
+    border-radius: var(--radius-btn);
+    font-size: var(--fs-body);
+    font-weight: 600;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.bouton-plein {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+}
+
+.bouton-contour {
+    background: transparent;
+    color: var(--btn-outline);
+}
+
+.bouton-plein:hover {
+    background: transparent;
+    color: var(--btn-outline);
+}
+
+.bouton-contour:hover {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+}
+
+.bouton:focus-visible {
+    outline: 2px solid var(--btn-outline);
+    outline-offset: 3px;
+}
