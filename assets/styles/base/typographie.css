@@ -31,3 +31,10 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+.texte-degrade {
+    background: linear-gradient(180deg, var(--bg-orb) 0%, #FFF 50.96%, var(--bg-orb) 86.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

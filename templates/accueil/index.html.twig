@@ -7,7 +7,7 @@
     <div class="presentation">
         <div class="presentation-text">
             <div class="presentation-title">
-                <h1>Salut, moi c'est {{ profil.prenom }}</h1>
+                <h1>Salut, moi c'est <span class="texte-degrade">{{ profil.prenom }}</span></h1>
                 <p class="accroche">{{ profil.accroche }}</p>
             </div>
 
@@ -45,11 +45,8 @@
         </div>
         <div class="information-cards">
             <div class="carte-profil">
-                <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de {{ profil.prenom }} {{ profil.nom }}" class="carte-profil-photo">
-
+                <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de {{ profil.prenom }} {{ profil.nom }}" class="profil-img">
                 <h3 class="carte-profil-nom">{{ profil.prenom }} {{ profil.nom }}</h3>
-                <p class="carte-profil-titre">Étudiant BTS SIO SLAM</p>
-                <p class="carte-profil-ville">{{ profil.ville }}</p>
 
                 <div class="carte-profil-liens">
                     <a href="{{ profil.urlGithub }}" target="_blank" rel="noopener noreferrer" aria-label="Mon GitHub">
@@ -60,19 +57,17 @@
                         <img src="{{ asset('images/icones/linkedin.svg') }}" alt="">
                     </a>
                 </div>
-
-                <a href="#" class="carte-profil-contact">Me contacter</a>
             </div>
 
-            <div>
+            <div class="carte-info">
                 <h3>Études</h3>
-                <img src="{{ asset('images/' ~ profil.logoEtudes) }}" alt="Études actuelles">
+                <img src="{{ asset('images/' ~ profil.logoEtudes) }}" alt="Études actuelles" class="carte-logo">
                 <p>{{ profil.statutEtudes }}</p>
             </div>
 
-            <div>
+            <div class="carte-info">
                 <h3>Travail</h3>
-                <img src="{{ asset('images/' ~ profil.logoTravail) }}" alt="Emploi actuel">
+                <img src="{{ asset('images/' ~ profil.logoTravail) }}" alt="Emploi actuel" class="carte-logo">
                 <p>{{ profil.statutTravail }}</p>
             </div>
         </div>
