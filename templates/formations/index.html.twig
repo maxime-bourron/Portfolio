@@ -3,7 +3,7 @@
 {% block title %}Portfolio - Maxime Bourron - Formations{% endblock %}
 
 {% block body %}
-<main>
+<main class="formations">
     <h1>Mes formations</h1>
 
     <div class="frise">
@@ -13,7 +13,7 @@
                     {{ formation.dateDebut|date('Y') }} - {{ formation.dateFin ? formation.dateFin|date('Y') : "aujourd'hui" }}
                 </p>
 
-                <a href="{{ path('app_formation_detail', {id: formation.id}) }}" class="formation-carte">
+                <a href="{{ path('app_formation_detail', {id: formation.id}) }}" class="carte carte-cliquable formation-carte">
                     <img src="{{ asset('images/' ~ formation.logo) }}" alt="Logo {{ formation.etablissement }}" class="formation-logo">
 
                     <div class="formation-contenu">

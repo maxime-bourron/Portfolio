@@ -1,0 +1,163 @@
+/* ==========================================================================
+    Formations
+    Frise chronologique des formations et cartes cliquables
+   ========================================================================== */
+
+/* ---------- Main ---------- */
+.formations {
+    gap: 30px;
+}
+
+
+/* ---------- Frise ---------- */
+.frise {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-block: 100px;
+}
+
+.frise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--text-title);
+    transform: translateX(-50%);
+}
+
+
+/* ---------- Élément de la frise ---------- */
+/* 3 colonnes : carte ou date | point | date ou carte */
+.frise-item {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    align-items: start;
+}
+
+.frise-item::before {
+    content: '';
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    position: relative;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    margin-top: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--text-title);
+    background: var(--bg-orb);
+}
+
+.frise-date {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    margin-top: 6px;
+    font-size: var(--fs-card-title);
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+.formation-carte {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Un élément sur deux : la carte passe à droite et la date à gauche */
+.frise-item:nth-child(even) .formation-carte {
+    grid-column: 3;
+}
+
+.frise-item:nth-child(even) .frise-date {
+    grid-column: 1;
+    justify-self: end;
+    text-align: right;
+}
+
+
+/* ---------- Carte ---------- */
+.formation-carte {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.formation-logo {
+    flex-shrink: 0;
+    width: clamp(110px, 11vw, 200px);
+    height: auto;
+    object-fit: contain;
+}
+
+.formation-contenu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.formation-titre {
+    font-size: var(--fs-card-title);
+}
+
+.formation-resume,
+.formation-acquis {
+    font-size: var(--fs-small);
+    line-height: 1.45;
+    color: var(--text-body);
+}
+
+.formation-acquis {
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    /* Ligne à gauche, tout le contenu à droite */
+    .frise::before {
+        left: 15px;
+    }
+
+    .frise-item {
+        grid-template-columns: 30px 1fr;
+        row-gap: 12px;
+    }
+
+    .frise-item::before {
+        grid-column: 1;
+        margin-top: 4px;
+    }
+
+    .frise-date,
+    .frise-item:nth-child(even) .frise-date {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: start;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .formation-carte,
+    .frise-item:nth-child(even) .formation-carte {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    /* Logo au-dessus du texte */
+    .formation-carte {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .formation-logo {
+        width: 140px;
+    }
+}
