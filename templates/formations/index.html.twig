@@ -3,5 +3,34 @@
 {% block title %}Portfolio - Maxime Bourron - Formations{% endblock %}
 
 {% block body %}
-<main><h1>Mes formations</h1></main>
+<main>
+    <h1>Mes formations</h1>
+
+    <div class="frise">
+        {% for formation in formations %}
+            <div class="frise-item" data-controller="reveal">
+                <p class="frise-date">
+                    {{ formation.dateDebut|date('Y') }} - {{ formation.dateFin ? formation.dateFin|date('Y') : "aujourd'hui" }}
+                </p>
+
+                <article class="formation-carte">
+                    <img src="{{ asset('images/' ~ formation.logo) }}" alt="Logo {{ formation.etablissement }}" class="formation-logo">
+
+                    <div class="formation-contenu">
+                        <h2 class="formation-titre">{{ formation.sigle }}</h2>
+                        <p class="formation-resume">{{ formation.resume }}</p>
+
+                        <ul class="formation-acquis">
+                            {% for acquis in formation.acquis|split("\n") %}
+                                {% if acquis|trim %}
+                                    <li>{{ acquis|trim }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        {% endfor %}
+    </div>
+</main>
 {% endblock %}

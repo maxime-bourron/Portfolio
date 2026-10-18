@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\FormationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -9,8 +10,12 @@ use Symfony\Component\Routing\Attribute\Route;
 final class FormationsController extends AbstractController
 {
     #[Route('/formations', name: 'app_formations')]
-    public function index(): Response
+    public function index(FormationRepository $formationRepository): Response
     {
-        return $this->render('formations/index.html.twig');
+        $formations = $formationRepository->findBy([], ['dateDebut' => 'DESC']);
+
+        return $this->render('formations/index.html.twig', [
+            'formations' => $formations,
+        ]);
     }
 }
