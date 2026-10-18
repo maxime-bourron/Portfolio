@@ -13,7 +13,7 @@
                     {{ formation.dateDebut|date('Y') }} - {{ formation.dateFin ? formation.dateFin|date('Y') : "aujourd'hui" }}
                 </p>
 
-                <article class="formation-carte">
+                <a href="{{ path('app_formation_detail', {id: formation.id}) }}" class="formation-carte">
                     <img src="{{ asset('images/' ~ formation.logo) }}" alt="Logo {{ formation.etablissement }}" class="formation-logo">
 
                     <div class="formation-contenu">
@@ -28,7 +28,7 @@
                             {% endfor %}
                         </ul>
                     </div>
-                </article>
+                </a>
             </div>
         {% endfor %}
     </div>

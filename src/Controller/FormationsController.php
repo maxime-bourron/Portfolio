@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\FormationRepository;
+use App\Entity\Formation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -16,6 +17,14 @@ final class FormationsController extends AbstractController
 
         return $this->render('formations/index.html.twig', [
             'formations' => $formations,
+        ]);
+    }
+
+    #[Route('/formations/{id}', name: 'app_formation_detail')]
+    public function detail(Formation $formation): Response
+    {
+        return $this->render('formations/detail.html.twig', [
+            'formation' => $formation,
         ]);
     }
 }

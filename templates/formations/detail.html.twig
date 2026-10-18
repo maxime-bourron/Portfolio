@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio - Maxime Bourron - {{ formation.sigle }}{% endblock %}
+
+{% block body %}
+<main>
+    <a href="{{ path('app_formations') }}" class="retour">← Retour aux formations</a>
+
+    <div class="formation-entete">
+        <img src="{{ asset('images/' ~ formation.logo) }}" alt="Logo {{ formation.etablissement }}" class="formation-logo">
+        <div>
+            <h1>{{ formation.sigle }}</h1>
+            <p>{{ formation.intitule }}</p>
+            <p>{{ formation.etablissement }}, {{ formation.ville }}</p>
+            <p>{{ formation.modalite.value }} · {{ formation.dateDebut|date('Y') }} - {{ formation.dateFin ? formation.dateFin|date('Y') : "aujourd'hui" }}</p>
+        </div>
+    </div>
+
+    <section>
+        <h2>Présentation</h2>
+        <p>{{ formation.presentation|nl2br }}</p>
+    </section>
+
+    <section>
+        <h2>Spécialités</h2>
+        <p>{{ formation.specialites|nl2br }}</p>
+    </section>
+
+    <section>
+        <h2>Acquis</h2>
+        <ul>
+            {% for acquis in formation.acquis|split("\n") %}
+                {% if acquis|trim %}
+                    <li>{{ acquis|trim }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+</main>
+{% endblock %}
