@@ -49,12 +49,12 @@
                 <h3 class="information-profil-nom">{{ profil.prenom }} {{ profil.nom }}</h3>
 
                 <div class="information-profil-liens">
-                    <a href="{{ profil.urlGithub }}" target="_blank" rel="noopener noreferrer" aria-label="Mon GitHub">
-                        <img src="{{ asset('images/icones/github.svg') }}" alt="">
+                    <a href="{{ profil.urlGithub }}" target="_blank" rel="noopener noreferrer" aria-label="Mon GitHub" class="icone-lien">
+                        <span class="icone" style="--icone: url('{{ asset('images/icones/github.svg') }}')"></span>
                     </a>
 
-                    <a href="{{ profil.urlLinkedin }}" target="_blank" rel="noopener noreferrer" aria-label="Mon LinkedIn">
-                        <img src="{{ asset('images/icones/linkedin.svg') }}" alt="">
+                    <a href="{{ profil.urlLinkedin }}" target="_blank" rel="noopener noreferrer" aria-label="Mon LinkedIn" class="icone-lien">
+                        <span class="icone" style="--icone: url('{{ asset('images/icones/linkedin.svg') }}')"></span>
                     </a>
                 </div>
             </div>
