@@ -43,12 +43,12 @@
                 <p>{{ profil.perspectives }}</p>
             </div>
         </div>
-        <div class="information-cards">
-            <div class="carte-profil" data-controller="reveal">
+        <div class="information-blocs">
+            <div class="information-profil" data-controller="reveal">
                 <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de {{ profil.prenom }} {{ profil.nom }}" class="profil-img">
-                <h3 class="carte-profil-nom">{{ profil.prenom }} {{ profil.nom }}</h3>
+                <h3 class="information-profil-nom">{{ profil.prenom }} {{ profil.nom }}</h3>
 
-                <div class="carte-profil-liens">
+                <div class="information-profil-liens">
                     <a href="{{ profil.urlGithub }}" target="_blank" rel="noopener noreferrer" aria-label="Mon GitHub">
                         <img src="{{ asset('images/icones/github.svg') }}" alt="">
                     </a>
@@ -59,15 +59,15 @@
                 </div>
             </div>
 
-            <div class="carte-info" data-controller="reveal">
+            <div class="information-bloc" data-controller="reveal">
                 <h3>Études</h3>
-                <img src="{{ asset('images/' ~ profil.logoEtudes) }}" alt="Études actuelles" class="carte-logo">
+                <img src="{{ asset('images/' ~ profil.logoEtudes) }}" alt="Études actuelles" class="information-logo">
                 <p>{{ profil.statutEtudes }}</p>
             </div>
 
-            <div class="carte-info" data-controller="reveal">
+            <div class="information-bloc" data-controller="reveal">
                 <h3>Travail</h3>
-                <img src="{{ asset('images/' ~ profil.logoTravail) }}" alt="Emploi actuel" class="carte-logo">
+                <img src="{{ asset('images/' ~ profil.logoTravail) }}" alt="Emploi actuel" class="information-logo">
                 <p>{{ profil.statutTravail }}</p>
             </div>
         </div>

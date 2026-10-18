@@ -13,30 +13,30 @@
     border-radius: var(--radius-btn);
     font-size: var(--fs-body);
     font-weight: 600;
-    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 
 /* ---------- Variantes ---------- */
 .bouton-plein {
-    background: var(--btn-bg);
+    background-color: var(--btn-bg);
     color: var(--btn-text);
 }
 
 .bouton-contour {
-    background: transparent;
+    background-color: transparent;
     color: var(--btn-outline);
 }
 
 
 /* ---------- Survol et focus ---------- */
 .bouton-plein:hover {
-    background: transparent;
+    background-color: transparent;
     color: var(--btn-outline);
 }
 
 .bouton-contour:hover {
-    background: var(--btn-bg);
+    background-color: var(--btn-bg);
     color: var(--btn-text);
 }
 
