@@ -119,6 +119,89 @@
 }
 
 
+
+/* ---------- Détail : page ---------- */
+/* Contenu plus étroit que le site pour garder un texte lisible */
+.formation-detail {
+    max-width: 1000px;
+    gap: 60px;
+}
+
+
+/* ---------- Détail : en-tête ---------- */
+.formation-entete {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.formation-entete-logo {
+    flex-shrink: 0;
+    width: clamp(120px, 14vw, 220px);
+    height: auto;
+    object-fit: contain;
+}
+
+.formation-entete-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.formation-intitule {
+    font-size: var(--fs-accroche);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-title);
+}
+
+.formation-lieu {
+    color: var(--text-secondary);
+}
+
+.formation-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.formation-dates {
+    font-size: var(--fs-small);
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+
+/* ---------- Détail : sections ---------- */
+.formation-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formation-section ul {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: var(--fs-body);
+    line-height: 1.55;
+    color: var(--text-body);
+}
+
+.formation-colonnes {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
     /* Ligne à gauche, tout le contenu à droite */
@@ -159,5 +242,17 @@
 
     .formation-logo {
         width: 140px;
+    }
+
+    /* Détail : logo au-dessus des infos, une seule colonne */
+    .formation-entete {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .formation-colonnes {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }

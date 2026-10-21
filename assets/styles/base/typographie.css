@@ -52,3 +52,21 @@ a {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
+/* ---------- Lien de retour ---------- */
+.lien-retour {
+    align-self: flex-start;
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.lien-retour:hover {
+    color: var(--text-title);
+}
+
+.lien-retour:focus-visible {
+    outline: 2px solid var(--text-title);
+    outline-offset: 4px;
+}

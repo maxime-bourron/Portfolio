@@ -3,38 +3,45 @@
 {% block title %}Portfolio - Maxime Bourron - {{ formation.sigle }}{% endblock %}
 
 {% block body %}
-<main>
-    <a href="{{ path('app_formations') }}" class="retour">← Retour aux formations</a>
+<main class="formation-detail">
+    <a href="{{ path('app_formations') }}" class="lien-retour">← Retour aux formations</a>
 
-    <div class="formation-entete">
-        <img src="{{ asset('images/' ~ formation.logo) }}" alt="Logo {{ formation.etablissement }}" class="formation-logo">
-        <div>
+    <div class="carte formation-entete" data-controller="reveal">
+        <img src="{{ asset('images/' ~ formation.logo) }}" alt="Logo {{ formation.etablissement }}" class="formation-entete-logo">
+
+        <div class="formation-entete-infos">
             <h1>{{ formation.sigle }}</h1>
-            <p>{{ formation.intitule }}</p>
-            <p>{{ formation.etablissement }}, {{ formation.ville }}</p>
-            <p>{{ formation.modalite.value }} · {{ formation.dateDebut|date('Y') }} - {{ formation.dateFin ? formation.dateFin|date('Y') : "aujourd'hui" }}</p>
+            <p class="formation-intitule">{{ formation.intitule }}</p>
+            <p class="formation-lieu">{{ formation.etablissement }} · {{ formation.ville }}</p>
+
+            <div class="formation-meta">
+                <span class="tag">{{ formation.modalite.value }}</span>
+                <span class="formation-dates">{{ formation.dateDebut|date('Y') }} - {{ formation.dateFin ? formation.dateFin|date('Y') : "aujourd'hui" }}</span>
+            </div>
         </div>
     </div>
 
-    <section>
+    <section class="formation-section" data-controller="reveal">
         <h2>Présentation</h2>
         <p>{{ formation.presentation|nl2br }}</p>
     </section>
 
-    <section>
-        <h2>Spécialités</h2>
-        <p>{{ formation.specialites|nl2br }}</p>
-    </section>
+    <div class="formation-colonnes">
+        <section class="formation-section" data-controller="reveal">
+            <h2>Spécialités</h2>
+            <p>{{ formation.specialites|nl2br }}</p>
+        </section>
 
-    <section>
-        <h2>Acquis</h2>
-        <ul>
-            {% for acquis in formation.acquis|split("\n") %}
-                {% if acquis|trim %}
-                    <li>{{ acquis|trim }}</li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </section>
+        <section class="formation-section" data-controller="reveal" data-reveal-delay-value="150">
+            <h2>Acquis</h2>
+            <ul>
+                {% for acquis in formation.acquis|split("\n") %}
+                    {% if acquis|trim %}
+                        <li>{{ acquis|trim }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
 </main>
 {% endblock %}

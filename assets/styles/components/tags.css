@@ -1,0 +1,17 @@
+/* ==========================================================================
+    Tags
+    Petites étiquettes arrondies : modalité, type de contrat, technologies
+   ========================================================================== */
+
+/* ---------- Tag ---------- */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    background-color: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-meta);
+    font-weight: 600;
+    color: var(--text-title);
+}
