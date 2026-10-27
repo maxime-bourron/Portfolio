@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Enum\Modalite;
 use App\Repository\FormationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -50,6 +52,18 @@ class Formation
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $acquis = null;
+
+    /**
+     * @var Collection<int, Competence>
+     */
+    #[ORM\OneToMany(targetEntity: Competence::class, mappedBy: 'formation')]
+    #[ORM\OrderBy(['code' => 'ASC'])]
+    private Collection $competences;
+
+    public function __construct()
+    {
+        $this->competences = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -196,6 +210,36 @@ class Formation
     public function setAcquis(?string $acquis): static
     {
         $this->acquis = $acquis;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Competence>
+     */
+    public function getCompetences(): Collection
+    {
+        return $this->competences;
+    }
+
+    public function addCompetence(Competence $competence): static
+    {
+        if (!$this->competences->contains($competence)) {
+            $this->competences->add($competence);
+            $competence->setFormation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompetence(Competence $competence): static
+    {
+        if ($this->competences->removeElement($competence)) {
+            // set the owning side to null (unless already changed)
+            if ($competence->getFormation() === $this) {
+                $competence->setFormation(null);
+            }
+        }
 
         return $this;
     }
