@@ -202,6 +202,56 @@
 }
 
 
+/* ---------- Détail : tableau des compétences ---------- */
+/* Défilement horizontal si le tableau dépasse de la carte */
+.formation-tableau {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.formation-competences {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-small);
+    line-height: 1.45;
+}
+
+.formation-competences th,
+.formation-competences td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--separator);
+}
+
+.formation-competences thead th {
+    border-bottom: 2px solid var(--card-border);
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+.formation-competences tbody th {
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--text-title);
+}
+
+.formation-competences td {
+    color: var(--text-body);
+}
+
+.formation-competences .formation-competence-libelle {
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+/* Pas de bordure sous la dernière ligne, la carte ferme déjà le tableau */
+.formation-competences tbody tr:last-child th,
+.formation-competences tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
     /* Ligne à gauche, tout le contenu à droite */
@@ -254,5 +304,47 @@
     .formation-colonnes {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    /* Tableau : chaque ligne devient un bloc empilé */
+    .formation-competences thead {
+        display: none;
+    }
+
+    .formation-competences,
+    .formation-competences tbody,
+    .formation-competences tr,
+    .formation-competences th,
+    .formation-competences td {
+        display: block;
+    }
+
+    .formation-competences tr {
+        padding-block: 15px;
+        border-bottom: 1px solid var(--separator);
+    }
+
+    .formation-competences tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .formation-competences th,
+    .formation-competences td {
+        padding: 5px 0;
+        border-bottom: none;
+    }
+
+    .formation-competences tbody th {
+        font-size: var(--fs-card-title);
+    }
+
+    /* Nom de la colonne au-dessus de chaque valeur */
+    .formation-competences td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        font-size: var(--fs-meta);
+        font-weight: 600;
+        color: var(--text-secondary);
     }
 }

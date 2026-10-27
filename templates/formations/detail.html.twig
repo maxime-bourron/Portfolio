@@ -43,5 +43,36 @@
             </ul>
         </section>
     </div>
+
+    {% if formation.competences is not empty %}
+        <section class="formation-section" data-controller="reveal">
+            <h2>Compétences</h2>
+
+            <div class="carte formation-tableau">
+                <table class="formation-competences">
+                    <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Compétence</th>
+                            <th scope="col">Définition</th>
+                            <th scope="col">Preuve</th>
+                            <th scope="col">Justification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for competence in formation.competences %}
+                            <tr>
+                                <th scope="row">{{ competence.code }}</th>
+                                <td data-label="Compétence" class="formation-competence-libelle">{{ competence.libelle }}</td>
+                                <td data-label="Définition">{{ competence.definition|nl2br }}</td>
+                                <td data-label="Preuve">{{ (competence.preuve ?? '')|nl2br }}</td>
+                                <td data-label="Justification">{{ (competence.justification ?? '')|nl2br }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    {% endif %}
 </main>
 {% endblock %}
