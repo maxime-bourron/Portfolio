@@ -20,55 +20,46 @@ class Profil
     #[ORM\Column(length: 50)]
     private ?string $prenom = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTime $dateNaissance = null;
-
-    #[ORM\Column(length: 60, nullable: true)]
-    private ?string $ville = null;
-
-    #[ORM\Column(length: 20, nullable: true)]
-    private ?string $telephone = null;
-
     #[ORM\Column(length: 100)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 150, nullable: true)]
+    #[ORM\Column(length: 150)]
     private ?string $accroche = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $presentation = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $objectif = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $perspectives = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cv = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
+    #[ORM\Column(length: 100)]
     private ?string $statutEtudes = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
+    #[ORM\Column(length: 100)]
     private ?string $statutTravail = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $logoEtudes = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $logoTravail = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $urlGithub = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $urlLinkedin = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $parcours = null;
 
     public function getId(): ?int
@@ -100,42 +91,6 @@ class Profil
         return $this;
     }
 
-    public function getDateNaissance(): ?\DateTime
-    {
-        return $this->dateNaissance;
-    }
-
-    public function setDateNaissance(?\DateTime $dateNaissance): static
-    {
-        $this->dateNaissance = $dateNaissance;
-
-        return $this;
-    }
-
-    public function getVille(): ?string
-    {
-        return $this->ville;
-    }
-
-    public function setVille(?string $ville): static
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    public function getTelephone(): ?string
-    {
-        return $this->telephone;
-    }
-
-    public function setTelephone(?string $telephone): static
-    {
-        $this->telephone = $telephone;
-
-        return $this;
-    }
-
     public function getEmail(): ?string
     {
         return $this->email;
@@ -153,7 +108,7 @@ class Profil
         return $this->accroche;
     }
 
-    public function setAccroche(?string $accroche): static
+    public function setAccroche(string $accroche): static
     {
         $this->accroche = $accroche;
 
@@ -165,7 +120,7 @@ class Profil
         return $this->presentation;
     }
 
-    public function setPresentation(?string $presentation): static
+    public function setPresentation(string $presentation): static
     {
         $this->presentation = $presentation;
 
@@ -177,7 +132,7 @@ class Profil
         return $this->objectif;
     }
 
-    public function setObjectif(?string $objectif): static
+    public function setObjectif(string $objectif): static
     {
         $this->objectif = $objectif;
 
@@ -189,7 +144,7 @@ class Profil
         return $this->perspectives;
     }
 
-    public function setPerspectives(?string $perspectives): static
+    public function setPerspectives(string $perspectives): static
     {
         $this->perspectives = $perspectives;
 
@@ -201,7 +156,7 @@ class Profil
         return $this->photo;
     }
 
-    public function setPhoto(?string $photo): static
+    public function setPhoto(string $photo): static
     {
         $this->photo = $photo;
 
@@ -225,7 +180,7 @@ class Profil
         return $this->statutEtudes;
     }
 
-    public function setStatutEtudes(?string $statutEtudes): static
+    public function setStatutEtudes(string $statutEtudes): static
     {
         $this->statutEtudes = $statutEtudes;
 
@@ -237,7 +192,7 @@ class Profil
         return $this->statutTravail;
     }
 
-    public function setStatutTravail(?string $statutTravail): static
+    public function setStatutTravail(string $statutTravail): static
     {
         $this->statutTravail = $statutTravail;
 
@@ -249,7 +204,7 @@ class Profil
         return $this->logoEtudes;
     }
 
-    public function setLogoEtudes(?string $logoEtudes): static
+    public function setLogoEtudes(string $logoEtudes): static
     {
         $this->logoEtudes = $logoEtudes;
 
@@ -261,7 +216,7 @@ class Profil
         return $this->logoTravail;
     }
 
-    public function setLogoTravail(?string $logoTravail): static
+    public function setLogoTravail(string $logoTravail): static
     {
         $this->logoTravail = $logoTravail;
 
@@ -273,7 +228,7 @@ class Profil
         return $this->urlGithub;
     }
 
-    public function setUrlGithub(?string $urlGithub): static
+    public function setUrlGithub(string $urlGithub): static
     {
         $this->urlGithub = $urlGithub;
 
@@ -285,7 +240,7 @@ class Profil
         return $this->urlLinkedin;
     }
 
-    public function setUrlLinkedin(?string $urlLinkedin): static
+    public function setUrlLinkedin(string $urlLinkedin): static
     {
         $this->urlLinkedin = $urlLinkedin;
 
@@ -297,7 +252,7 @@ class Profil
         return $this->parcours;
     }
 
-    public function setParcours(?string $parcours): static
+    public function setParcours(string $parcours): static
     {
         $this->parcours = $parcours;
 

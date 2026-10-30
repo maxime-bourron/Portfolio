@@ -135,7 +135,7 @@ class Formation
         return $this->logo;
     }
 
-    public function setLogo(?string $logo): static
+    public function setLogo(string $logo): static
     {
         $this->logo = $logo;
 
@@ -147,7 +147,7 @@ class Formation
         return $this->dateDebut;
     }
 
-    public function setDateDebut(?\DateTime $dateDebut): static
+    public function setDateDebut(\DateTime $dateDebut): static
     {
         $this->dateDebut = $dateDebut;
 
@@ -171,7 +171,7 @@ class Formation
         return $this->resume;
     }
 
-    public function setResume(?string $resume): static
+    public function setResume(string $resume): static
     {
         $this->resume = $resume;
 
@@ -183,7 +183,7 @@ class Formation
         return $this->presentation;
     }
 
-    public function setPresentation(?string $presentation): static
+    public function setPresentation(string $presentation): static
     {
         $this->presentation = $presentation;
 
@@ -195,7 +195,7 @@ class Formation
         return $this->specialites;
     }
 
-    public function setSpecialites(?string $specialites): static
+    public function setSpecialites(string $specialites): static
     {
         $this->specialites = $specialites;
 
@@ -207,7 +207,7 @@ class Formation
         return $this->acquis;
     }
 
-    public function setAcquis(?string $acquis): static
+    public function setAcquis(string $acquis): static
     {
         $this->acquis = $acquis;
 
