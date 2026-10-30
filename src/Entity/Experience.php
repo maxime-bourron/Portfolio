@@ -48,7 +48,7 @@ class Experience
     #[ORM\Column(type: Types::TEXT)]
     private ?string $missions = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $technos = null;
 
     #[ORM\Column(length: 255)]
@@ -202,7 +202,7 @@ class Experience
         return $this->technos;
     }
 
-    public function setTechnos(string $technos): static
+    public function setTechnos(?string $technos): static
     {
         $this->technos = $technos;
 
