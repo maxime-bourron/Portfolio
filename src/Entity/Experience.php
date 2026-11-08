@@ -37,6 +37,9 @@ class Experience
     private ?\DateTime $dateFin = null;
 
     #[ORM\Column(options: ['default' => false])]
+    private ?bool $dateApproximative = false;
+
+    #[ORM\Column(options: ['default' => false])]
     private ?bool $stageBts = false;
 
     #[ORM\Column(length: 300)]
@@ -145,6 +148,18 @@ class Experience
     public function setDateFin(?\DateTime $dateFin): static
     {
         $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
+    public function isDateApproximative(): ?bool
+    {
+        return $this->dateApproximative;
+    }
+
+    public function setDateApproximative(bool $dateApproximative): static
+    {
+        $this->dateApproximative = $dateApproximative;
 
         return $this;
     }
