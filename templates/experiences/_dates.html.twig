@@ -1,0 +1,5 @@
+{% set format = experience.dateApproximative ? 'yyyy' : 'MMMM yyyy' %}
+{{ experience.dateDebut|format_date(pattern: format) }}
+{%- if experience.dateFin is null %} - aujourd'hui
+{%- elseif experience.dateFin|format_date(pattern: format) != experience.dateDebut|format_date(pattern: format) %} - {{ experience.dateFin|format_date(pattern: format) }}
+{%- endif %}

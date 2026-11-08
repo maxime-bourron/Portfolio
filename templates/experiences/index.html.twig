@@ -3,5 +3,56 @@
 {% block title %}Portfolio - Maxime Bourron - Expériences{% endblock %}
 
 {% block body %}
-<main><h1>Mes expériences</h1></main>
+<main class="experiences">
+    <h1>Mes expériences</h1>
+
+    <section class="experiences-section">
+        <h2>Stages BTS SIO</h2>
+
+        <div class="experiences-stages">
+            {% for experience in stages %}
+                <article class="carte experience-carte" data-controller="reveal">
+                    <img src="{{ asset('images/' ~ experience.logo) }}" alt="Logo {{ experience.entreprise }}" class="experience-logo">
+
+                    <div class="experience-contenu">
+                        <div class="experience-entete">
+                            <h3 class="experience-poste">{{ experience.poste }}</h3>
+                            <p class="experience-date">{{ include('experiences/_dates.html.twig') }}</p>
+                        </div>
+                        <p class="experience-infos">{{ experience.entreprise }} · {{ experience.lieu }} · {{ experience.typeContrat.value }}</p>
+                        <p class="experience-resume">{{ experience.resume }}</p>
+
+                        {% if experience.technos %}
+                            <ul class="experience-technos">
+                                {% for techno in experience.technos|split(',') %}
+                                    <li class="tag">{{ techno|trim }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="experiences-section">
+        <h2>Autres expériences</h2>
+
+        <ul class="carte experiences-liste">
+            {% for experience in autres %}
+                <li class="experiences-ligne" data-controller="reveal">
+                    <img src="{{ asset('images/' ~ experience.logo) }}" alt="Logo {{ experience.entreprise }}" class="experiences-ligne-logo">
+
+                    <div class="experiences-ligne-titre">
+                        <h3 class="experience-poste">{{ experience.poste }}</h3>
+                        <p class="experience-infos">{{ experience.entreprise }} · {{ experience.lieu }}</p>
+                    </div>
+
+                    <span class="tag">{{ experience.typeContrat.value }}</span>
+                    <p class="experience-date">{{ include('experiences/_dates.html.twig') }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+</main>
 {% endblock %}
