@@ -29,6 +29,7 @@
                                 {% endfor %}
                             </ul>
                         {% endif %}
+                        <a href="{{ path('app_experience_detail', {id: experience.id}) }}" class="bouton bouton-contour">Détails</a>
                     </div>
                 </article>
             {% endfor %}
@@ -50,6 +51,7 @@
 
                     <span class="tag">{{ experience.typeContrat.value }}</span>
                     <p class="experience-date">{{ include('experiences/_dates.html.twig') }}</p>
+                    <a href="{{ path('app_experience_detail', {id: experience.id}) }}" class="bouton bouton-contour">Détails</a>
                 </li>
             {% endfor %}
         </ul>

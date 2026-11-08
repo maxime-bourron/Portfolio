@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio - Maxime Bourron - {{ experience.poste }} - {{ experience.entreprise }}{% endblock %}
+
+{% block body %}
+<main class="experience-detail">
+    <a href="{{ path('app_experiences') }}" class="lien-retour">← Retour aux expériences</a>
+
+    <div class="carte experience-entete" data-controller="reveal">
+        <img src="{{ asset('images/' ~ experience.logo) }}" alt="Logo {{ experience.entreprise }}" class="experience-entete-logo">
+
+        <div class="experience-entete-infos">
+            <h1>{{ experience.poste }}</h1>
+            <p class="experience-entete-entreprise">{{ experience.entreprise }} · {{ experience.lieu }}</p>
+
+            <div class="experience-meta">
+                <span class="tag">{{ experience.typeContrat.value }}</span>
+                <span class="experience-dates">{{ include('experiences/_dates.html.twig') }}</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="experience-section" data-controller="reveal">
+        <h2>Contexte et objectifs</h2>
+        <p>{{ experience.contexte|nl2br }}</p>
+    </section>
+
+    <section class="experience-section" data-controller="reveal">
+        <h2>Missions réalisées</h2>
+        <ul>
+            {% for mission in experience.missions|split("\n") %}
+                {% if mission|trim %}
+                    <li>{{ mission|trim }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="experience-section" data-controller="reveal">
+        <h2>Compétences et technologies</h2>
+
+        {% if experience.technos %}
+            <h3>Technologies</h3>
+            <ul class="experience-tags">
+                {% for techno in experience.technos|split(',') %}
+                    <li class="tag">{{ techno|trim }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h3>Savoir-être</h3>
+        <ul class="experience-tags">
+            {% for softSkill in experience.softSkills|split(',') %}
+                <li class="tag">{{ softSkill|trim }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    {% if experience.resultats %}
+        <section class="experience-section" data-controller="reveal">
+            <h2>Résultats et livrables</h2>
+            <p>{{ experience.resultats|nl2br }}</p>
+        </section>
+    {% endif %}
+
+    {% if experience.bilan %}
+        <section class="experience-section" data-controller="reveal">
+            <h2>Bilan</h2>
+            <p>{{ experience.bilan|nl2br }}</p>
+        </section>
+    {% endif %}
+</main>
+{% endblock %}
