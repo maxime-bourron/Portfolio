@@ -1,6 +1,6 @@
 /* ==========================================================================
     Expériences
-    Cartes des stages BTS SIO et liste des autres expériences
+    Cartes des stages BTS SIO, liste des autres expériences et page de détail
    ========================================================================== */
 
 /* ---------- Main ---------- */
@@ -20,7 +20,8 @@
 
 /* ---------- Éléments communs ---------- */
 .experience-logo,
-.experiences-ligne-logo {
+.experiences-ligne-logo,
+.experience-entete-logo {
     flex-shrink: 0;
     aspect-ratio: 1;
     border-radius: var(--radius-btn);
@@ -152,6 +153,81 @@
 }
 
 
+/* ---------- Détail : page ---------- */
+/* Contenu plus étroit que le site pour garder un texte lisible */
+.experience-detail {
+    max-width: 1000px;
+    gap: 60px;
+}
+
+
+/* ---------- Détail : en-tête ---------- */
+.experience-entete {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.experience-entete-logo {
+    width: clamp(120px, 12vw, 180px);
+    padding: 8px;
+}
+
+.experience-entete-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.experience-entete-entreprise {
+    color: var(--text-secondary);
+}
+
+.experience-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.experience-dates {
+    font-size: var(--fs-small);
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+
+/* ---------- Détail : sections ---------- */
+.experience-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.experience-section h3 {
+    font-size: var(--fs-card-title);
+}
+
+/* Espace entre le groupe Technologies et le groupe Savoir-être */
+.experience-tags + h3 {
+    margin-top: 15px;
+}
+
+.experience-missions {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: var(--fs-body);
+    line-height: 1.55;
+    color: var(--text-body);
+}
+
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
     .experiences {
@@ -170,6 +246,17 @@
 
     .experience-logo {
         width: 110px;
+    }
+
+    /* Détail : logo au-dessus des infos */
+    .experience-entete {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .experience-entete-logo {
+        width: 120px;
     }
 
     .experiences-liste {

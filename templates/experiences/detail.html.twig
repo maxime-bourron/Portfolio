@@ -27,7 +27,7 @@
 
     <section class="experience-section" data-controller="reveal">
         <h2>Missions réalisées</h2>
-        <ul>
+        <ul class="experience-missions">
             {% for mission in experience.missions|split("\n") %}
                 {% if mission|trim %}
                     <li>{{ mission|trim }}</li>
