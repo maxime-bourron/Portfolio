@@ -37,11 +37,11 @@
             </button>
 
             <nav data-header-target="nav">
-                <a href="{{ path('app_accueil') }}" class="nav-link {{ app.current_route == 'app_accueil' ? 'active' : '' }}" data-action="click->header#close">Accueil</a>
-                <a href="{{ path('app_formations') }}" class="nav-link {{ app.current_route == 'app_formations' ? 'active' : '' }}" data-action="click->header#close">Formations</a>
-                <a href="{{ path('app_experiences') }}" class="nav-link {{ app.current_route == 'app_experiences' ? 'active' : '' }}" data-action="click->header#close">Expériences</a>
-                <a href="{{ path('app_projets') }}" class="nav-link {{ app.current_route == 'app_projets' ? 'active' : '' }}" data-action="click->header#close">Projets</a>
-                <a href="{{ path('app_veilles') }}" class="nav-link {{ app.current_route == 'app_veilles' ? 'active' : '' }}" data-action="click->header#close">Veilles</a>
+                <a href="{{ path('app_accueil') }}" class="nav-link {{ app.current_route starts with 'app_accueil' ? 'active' : '' }}" data-action="click->header#close">Accueil</a>
+                <a href="{{ path('app_formations') }}" class="nav-link {{ app.current_route starts with 'app_formation' ? 'active' : '' }}" data-action="click->header#close">Formations</a>
+                <a href="{{ path('app_experiences') }}" class="nav-link {{ app.current_route starts with 'app_experience' ? 'active' : '' }}" data-action="click->header#close">Expériences</a>
+                <a href="{{ path('app_projets') }}" class="nav-link {{ app.current_route starts with 'app_projet' ? 'active' : '' }}" data-action="click->header#close">Projets</a>
+                <a href="{{ path('app_veilles') }}" class="nav-link {{ app.current_route starts with 'app_veille' ? 'active' : '' }}" data-action="click->header#close">Veilles</a>
             </nav>
         </header>
 
