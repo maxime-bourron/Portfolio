@@ -15,7 +15,7 @@
                     <img src="{{ asset('images/' ~ experience.logo) }}" alt="Logo {{ experience.entreprise }}" class="experience-logo">
 
                     <div class="experience-contenu">
-                        <div class="experience-entete">
+                        <div class="experience-carte-entete">
                             <h3 class="experience-poste">{{ experience.poste }}</h3>
                             <p class="experience-date">{{ include('experiences/_dates.html.twig') }}</p>
                         </div>
@@ -24,7 +24,7 @@
 
                         <div class="experience-pied">
                             {% if experience.technos %}
-                                <ul class="experience-technos">
+                                <ul class="experience-tags">
                                     {% for techno in experience.technos|split(',') %}
                                         <li class="tag">{{ techno|trim }}</li>
                                     {% endfor %}

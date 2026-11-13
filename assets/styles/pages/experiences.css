@@ -43,6 +43,15 @@
     white-space: nowrap;
 }
 
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 
 /* ---------- Stages BTS SIO ---------- */
 .experiences-stages {
@@ -71,7 +80,7 @@
 }
 
 /* Poste à gauche, date à droite */
-.experience-entete {
+.experience-carte-entete {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -92,15 +101,6 @@
     align-items: flex-end;
     gap: 15px;
     margin-top: 12px;
-}
-
-.experience-technos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 .experience-pied .bouton {
