@@ -12,3 +12,4 @@ import './styles/components/icones.css';
 import './styles/components/reveal.css';
 import './styles/pages/accueil.css';
 import './styles/pages/formations.css';
+import './styles/pages/experiences.css';

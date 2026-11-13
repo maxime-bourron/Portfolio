@@ -1,0 +1,211 @@
+/* ==========================================================================
+    Expériences
+    Cartes des stages BTS SIO et liste des autres expériences
+   ========================================================================== */
+
+/* ---------- Main ---------- */
+.experiences {
+    gap: 80px;
+}
+
+
+/* ---------- Sections ---------- */
+.experiences-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* ---------- Éléments communs ---------- */
+.experience-logo,
+.experiences-ligne-logo {
+    flex-shrink: 0;
+    aspect-ratio: 1;
+    border-radius: var(--radius-btn);
+    object-fit: contain;
+    background-color: var(--logo-bg);
+}
+
+.experience-poste {
+    font-size: var(--fs-card-title);
+}
+
+.experience-infos,
+.experience-date {
+    font-size: var(--fs-meta);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.experience-date {
+    white-space: nowrap;
+}
+
+
+/* ---------- Stages BTS SIO ---------- */
+.experiences-stages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.experience-carte {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.experience-logo {
+    width: clamp(110px, 9vw, 160px);
+    padding: 8px;
+}
+
+.experience-contenu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+/* Poste à gauche, date à droite */
+.experience-entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.experience-resume {
+    margin-top: 6px;
+    font-size: var(--fs-small);
+    line-height: 1.45;
+    color: var(--text-body);
+}
+
+/* Technos à gauche, bouton à droite */
+.experience-pied {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.experience-technos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.experience-pied .bouton {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+
+/* ---------- Autres expériences ---------- */
+.experiences-liste {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-block: 0;
+    list-style: none;
+}
+
+.experiences-ligne {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 14rem auto;
+    align-items: center;
+    gap: 20px;
+    padding-block: 20px;
+    border-bottom: 1px solid var(--separator);
+}
+
+.experiences-ligne:last-child {
+    border-bottom: none;
+}
+
+.experiences-ligne-logo {
+    width: 60px;
+    padding: 4px;
+}
+
+.experiences-ligne-titre {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.experiences-ligne .tag {
+    justify-self: start;
+}
+
+.experiences-ligne .experience-date {
+    text-align: right;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .experiences {
+        gap: 60px;
+    }
+
+    .experiences-stages {
+        grid-template-columns: 1fr;
+    }
+
+    /* Logo au-dessus du contenu */
+    .experience-carte {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-logo {
+        width: 110px;
+    }
+
+    .experiences-liste {
+        padding-inline: 15px;
+    }
+
+    .experiences-ligne {
+        grid-template-columns: 60px auto minmax(0, 1fr) auto;
+        grid-template-areas:
+            "logo titre titre bouton"
+            "logo tag   date  date";
+        row-gap: 12px;
+        column-gap: 15px;
+    }
+
+    .experiences-ligne-logo {
+        grid-area: logo;
+        align-self: start;
+    }
+
+    .experiences-ligne .experience-date {
+        grid-area: date;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .experiences-ligne .bouton {
+        grid-area: bouton;
+        align-self: start;
+    }
+
+    .experiences-ligne-titre {
+        grid-area: titre;
+    }
+
+    .experiences-ligne .tag {
+        grid-area: tag;
+    }
+}
