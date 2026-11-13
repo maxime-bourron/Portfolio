@@ -1,6 +1,6 @@
 /* ==========================================================================
     Boutons
-    Bouton de base et ses deux variantes : plein et contour
+    Bouton de base, variantes plein et contour, et taille réduite
    ========================================================================== */
 
 /* ---------- Bouton de base ---------- */
@@ -26,6 +26,11 @@
 .bouton-contour {
     background-color: transparent;
     color: var(--btn-outline);
+}
+
+.bouton-petit {
+    padding: 4px 12px;
+    font-size: var(--fs-small);
 }
 
 
