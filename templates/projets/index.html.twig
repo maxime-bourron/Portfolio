@@ -3,5 +3,61 @@
 {% block title %}Portfolio - Maxime Bourron - Projets{% endblock %}
 
 {% block body %}
-<main><h1>Mes projets</h1></main>
+<main class="projets">
+    <h1>Mes projets</h1>
+
+    <section class="projets-section">
+        <h2>Projet BTS SIO</h2>
+
+        <article class="carte projet-principal" data-controller="reveal">
+            <img src="{{ asset('images/' ~ principal.image) }}" alt="Aperçu du projet {{ principal.titre }}" class="projet-principal-image">
+
+            <div class="projet-principal-contenu">
+                <h3 class="projet-principal-titre">{{ principal.titre }}</h3>
+                <p class="projet-date">{{ include('projets/_dates.html.twig', {projet: principal}) }}</p>
+                <p class="projet-resume">{{ principal.resume }}</p>
+
+                <ul class="projet-tags">
+                    {% for techno in principal.technos|split(',') %}
+                        <li class="tag">{{ techno|trim }}</li>
+                    {% endfor %}
+                </ul>
+
+                {% if principal.urlCode %}
+                    <div class="projet-boutons">
+                        <a href="{{ principal.urlCode }}" class="bouton bouton-contour" target="_blank" rel="noopener">Code source</a>
+                    </div>
+                {% endif %}
+            </div>
+        </article>
+    </section>
+
+    <section class="projets-section">
+        <h2>Tous les projets</h2>
+
+        <div class="projets-grille">
+            {% for projet in projets %}
+                <article class="carte projet-carte" data-controller="reveal">
+                    <div class="projet-carte-visuel">
+                        <img src="{{ asset('images/' ~ projet.image) }}" alt="Aperçu du projet {{ projet.titre }}" class="projet-carte-image">
+                        <span class="tag projet-type">{{ projet.typeProjet.value }}</span>
+                    </div>
+
+                    <div class="projet-carte-contenu">
+                        <h3 class="projet-carte-titre">{{ projet.titre }}</h3>
+                        <p class="projet-resume">{{ projet.resume }}</p>
+
+                        <ul class="projet-tags">
+                            {% for techno in projet.technos|split(',') %}
+                                <li class="tag">{{ techno|trim }}</li>
+                            {% endfor %}
+                        </ul>
+
+                        <p class="projet-date">{{ include('projets/_dates.html.twig') }}</p>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+</main>
 {% endblock %}

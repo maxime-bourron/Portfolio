@@ -1,0 +1,4 @@
+{{ projet.dateDebut|format_date(pattern: 'MMMM yyyy') }}
+{%- if projet.dateFin is null %} - aujourd'hui
+{%- elseif projet.dateFin|format_date(pattern: 'MMMM yyyy') != projet.dateDebut|format_date(pattern: 'MMMM yyyy') %} - {{ projet.dateFin|format_date(pattern: 'MMMM yyyy') }}
+{%- endif %}
