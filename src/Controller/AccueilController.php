@@ -12,10 +12,8 @@ final class AccueilController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(ProfilRepository $profilRepository): Response
     {
-        $profil = $profilRepository->find(1);
-
         return $this->render('accueil/index.html.twig', [
-            'profil' => $profil,
+            'profil' => $profilRepository->find(1),
         ]);
     }
 }
