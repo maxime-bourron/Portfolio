@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Projet;
 use App\Repository\ProjetRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +16,14 @@ final class ProjetsController extends AbstractController
         return $this->render('projets/index.html.twig', [
             'principal' => $projetRepository->findOneBy(['misEnAvant' => true]),
             'projets' => $projetRepository->findBy(['misEnAvant' => false], ['dateDebut' => 'DESC']),
+        ]);
+    }
+
+    #[Route('/projets/{id}', name: 'app_projet_detail', requirements: ['id' => '\d+'])]
+    public function detail(Projet $projet): Response
+    {
+        return $this->render('projets/detail.html.twig', [
+            'projet' => $projet,
         ]);
     }
 }

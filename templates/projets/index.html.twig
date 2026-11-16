@@ -23,11 +23,12 @@
                     {% endfor %}
                 </ul>
 
-                {% if principal.urlCode %}
-                    <div class="projet-boutons">
+                <div class="projet-boutons">
+                    <a href="{{ path('app_projet_detail', {id: principal.id}) }}" class="bouton bouton-plein">Voir le projet</a>
+                    {% if principal.urlCode %}
                         <a href="{{ principal.urlCode }}" class="bouton bouton-contour" target="_blank" rel="noopener">Code source</a>
-                    </div>
-                {% endif %}
+                    {% endif %}
+                </div>
             </div>
         </article>
     </section>
@@ -53,7 +54,10 @@
                             {% endfor %}
                         </ul>
 
-                        <p class="projet-date">{{ include('projets/_dates.html.twig') }}</p>
+                        <div class="projet-carte-pied">
+                            <p class="projet-date">{{ include('projets/_dates.html.twig') }}</p>
+                            <a href="{{ path('app_projet_detail', {id: projet.id}) }}" class="bouton bouton-contour bouton-petit">Voir le projet</a>
+                        </div>
                     </div>
                 </article>
             {% endfor %}
