@@ -17,7 +17,7 @@
                 <p class="projet-date">{{ include('projets/_dates.html.twig', {projet: principal}) }}</p>
                 <p class="projet-resume">{{ principal.resume }}</p>
 
-                <ul class="projet-tags">
+                <ul class="liste-tags">
                     {% for techno in principal.technos|split(',') %}
                         <li class="tag">{{ techno|trim }}</li>
                     {% endfor %}
@@ -48,7 +48,7 @@
                         <h3 class="projet-carte-titre">{{ projet.titre }}</h3>
                         <p class="projet-resume">{{ projet.resume }}</p>
 
-                        <ul class="projet-tags">
+                        <ul class="liste-tags">
                             {% for techno in projet.technos|split(',') %}
                                 <li class="tag">{{ techno|trim }}</li>
                             {% endfor %}

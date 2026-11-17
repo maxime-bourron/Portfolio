@@ -49,7 +49,7 @@
         <h2>Compétences et technologies</h2>
 
         <h3>Technologies</h3>
-        <ul class="projet-tags">
+        <ul class="liste-tags">
             {% for techno in projet.technos|split(',') %}
                 <li class="tag">{{ techno|trim }}</li>
             {% endfor %}
@@ -57,7 +57,7 @@
 
         {% if projet.softSkills %}
             <h3>Savoir-être</h3>
-            <ul class="projet-tags">
+            <ul class="liste-tags">
                 {% for softSkill in projet.softSkills|split(',') %}
                     <li class="tag">{{ softSkill|trim }}</li>
                 {% endfor %}

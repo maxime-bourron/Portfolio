@@ -1,0 +1,213 @@
+/* ==========================================================================
+    Projets
+    Projet mis en avant, grille des projets et page de détail
+   ========================================================================== */
+
+/* ---------- Main ---------- */
+.projets {
+    gap: 80px;
+}
+
+
+/* ---------- Sections ---------- */
+.projets-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* ---------- Éléments communs ---------- */
+.projet-resume {
+    font-size: var(--fs-small);
+    line-height: 1.45;
+    color: var(--text-body);
+}
+
+.projet-date {
+    font-size: var(--fs-meta);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.projet-boutons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* ---------- Projet mis en avant ---------- */
+/* Capture à gauche, plus large que le texte à droite */
+.projet-principal {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.projet-principal-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius-btn);
+}
+
+.projet-principal-contenu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.projet-principal-titre {
+    font-size: var(--fs-h3);
+}
+
+.projet-principal .projet-boutons {
+    margin-top: 10px;
+}
+
+
+/* ---------- Grille des projets ---------- */
+.projets-grille {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* Capture collée aux bords, le padding passe sur le contenu */
+.projet-carte {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.projet-carte-visuel {
+    position: relative;
+}
+
+.projet-carte-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--card-border);
+}
+
+/* Type de projet posé sur la capture */
+.projet-type {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.projet-carte-contenu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 25px 25px;
+}
+
+.projet-carte-titre {
+    font-size: var(--fs-card-title);
+}
+
+/* Date à gauche, bouton à droite, toujours en bas de la carte */
+.projet-carte-pied {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+
+/* ---------- Détail : page ---------- */
+/* Contenu plus étroit que le site pour garder un texte lisible */
+.projet-detail {
+    max-width: 1000px;
+    gap: 60px;
+}
+
+
+/* ---------- Détail : en-tête ---------- */
+.projet-entete {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projet-entete-cadre {
+    color: var(--text-secondary);
+}
+
+.projet-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.projet-dates {
+    font-size: var(--fs-small);
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+.projet-entete .projet-boutons {
+    margin-top: 10px;
+}
+
+.projet-detail-image {
+    width: 100%;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-card);
+}
+
+
+/* ---------- Détail : sections ---------- */
+.projet-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.projet-section h3 {
+    font-size: var(--fs-card-title);
+}
+
+.projet-realisations {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: var(--fs-body);
+    line-height: 1.55;
+    color: var(--text-body);
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .projets {
+        gap: 60px;
+    }
+
+    /* Capture au-dessus du texte */
+    .projet-principal {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .projets-grille {
+        grid-template-columns: 1fr;
+    }
+}
