@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Portfolio - Maxime Bourron{% endblock %}</title>
+        <meta name="description" content="{% block description %}Portfolio de Maxime Bourron, étudiant en BTS SIO SLAM : formations, expériences, projets et veille technologique.{% endblock %}">
+        {% if app.current_route %}
+            <link rel="canonical" href="{{ url(app.current_route, app.current_route_parameters) }}">
+        {% endif %}
         <link rel="icon" href="{{ asset('images/site/favicon.png') }}" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

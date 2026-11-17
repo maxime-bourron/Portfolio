@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for route in ['app_accueil', 'app_formations', 'app_experiences', 'app_projets', 'app_veilles'] %}
+        <url><loc>{{ url(route) }}</loc></url>
+    {% endfor %}
+    {% for formation in formations %}
+        <url><loc>{{ url('app_formation_detail', {id: formation.id}) }}</loc></url>
+    {% endfor %}
+    {% for experience in experiences %}
+        <url><loc>{{ url('app_experience_detail', {id: experience.id}) }}</loc></url>
+    {% endfor %}
+    {% for projet in projets %}
+        <url><loc>{{ url('app_projet_detail', {id: projet.id}) }}</loc></url>
+    {% endfor %}
+</urlset>
