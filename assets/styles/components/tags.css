@@ -1,6 +1,6 @@
 /* ==========================================================================
     Tags
-    Petites étiquettes arrondies : modalité, type de contrat, technologies
+    Petites étiquettes arrondies et listes de tags
    ========================================================================== */
 
 /* ---------- Tag ---------- */
@@ -14,4 +14,21 @@
     font-size: var(--fs-meta);
     font-weight: 600;
     color: var(--text-title);
+}
+
+
+/* ---------- Liste de tags ---------- */
+/* Tags en ligne, qui passent à la ligne si la place manque */
+.liste-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Espace entre deux groupes de tags, comme Technologies et Savoir-être */
+.liste-tags + h3 {
+    margin-top: 15px;
 }

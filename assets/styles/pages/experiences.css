@@ -44,15 +44,6 @@
     white-space: nowrap;
 }
 
-.experience-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 
 /* ---------- Stages BTS SIO ---------- */
 .experiences-stages {
@@ -209,11 +200,6 @@
 
 .experience-section h3 {
     font-size: var(--fs-card-title);
-}
-
-/* Espace entre le groupe Technologies et le groupe Savoir-être */
-.experience-tags + h3 {
-    margin-top: 15px;
 }
 
 .experience-missions {
