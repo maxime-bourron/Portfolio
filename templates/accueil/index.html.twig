@@ -72,5 +72,19 @@
             </div>
         </div>
     </div>
+
+    <div class="line"></div>
+
+    <section class="accueil-projets">
+        <h2>Projets</h2>
+
+        <div class="projets-grille">
+            {% for projet in projets %}
+                {{ include('projets/_carte.html.twig') }}
+            {% endfor %}
+        </div>
+
+        <a href="{{ path('app_projets') }}" class="bouton bouton-plein">Voir plus de projets</a>
+    </section>
 </main>
 {% endblock %}

@@ -119,6 +119,20 @@
 }
 
 
+/* ---------- Aperçu des projets ---------- */
+.accueil-projets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Bouton centré sous les cartes */
+.accueil-projets > .bouton {
+    align-self: center;
+}
+
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
     .presentation {

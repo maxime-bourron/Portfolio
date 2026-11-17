@@ -1,0 +1,22 @@
+<article class="carte projet-carte" data-controller="reveal">
+    <div class="projet-carte-visuel">
+        <img src="{{ asset('images/' ~ projet.image) }}" alt="Aperçu du projet {{ projet.titre }}" class="projet-carte-image">
+        <span class="tag projet-type">{{ projet.typeProjet.value }}</span>
+    </div>
+
+    <div class="projet-carte-contenu">
+        <h3 class="projet-carte-titre">{{ projet.titre }}</h3>
+        <p class="projet-resume">{{ projet.resume }}</p>
+
+        <ul class="liste-tags">
+            {% for techno in projet.technos|split(',') %}
+                <li class="tag">{{ techno|trim }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="projet-carte-pied">
+            <p class="projet-date">{{ include('projets/_dates.html.twig') }}</p>
+            <a href="{{ path('app_projet_detail', {id: projet.id}) }}" class="bouton bouton-contour bouton-petit">Voir le projet</a>
+        </div>
+    </div>
+</article>
