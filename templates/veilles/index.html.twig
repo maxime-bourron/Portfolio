@@ -17,7 +17,9 @@
                 {% for article in veille.articles %}
                     <article class="carte veille-article" data-controller="reveal">
                         {% if article.image %}
-                            <img src="{{ asset('images/' ~ article.image) }}" alt="" class="veille-article-image">
+                            <span class="veille-article-icone">
+                                <span class="icone" style="--icone: url('{{ asset('images/' ~ article.image) }}')"></span>
+                            </span>
                         {% endif %}
 
                         <div class="veille-article-contenu">

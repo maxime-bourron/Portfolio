@@ -14,3 +14,4 @@ import './styles/pages/accueil.css';
 import './styles/pages/formations.css';
 import './styles/pages/experiences.css';
 import './styles/pages/projets.css';
+import './styles/pages/veilles.css';

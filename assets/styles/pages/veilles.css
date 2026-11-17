@@ -1,0 +1,108 @@
+/* ==========================================================================
+    Veilles
+    Thèmes de veille et cartes des articles
+   ========================================================================== */
+
+/* ---------- Main ---------- */
+.veilles {
+    gap: 80px;
+}
+
+
+/* ---------- Sections ---------- */
+.veilles-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.veille-entete {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ---------- Articles ---------- */
+.veille-articles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* Image à gauche quand l'article en a une */
+.veille-article {
+    display: flex;
+    gap: 25px;
+}
+
+/* Icône du sujet dans un carré, à gauche du texte */
+.veille-article-icone {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: var(--radius-btn);
+    color: var(--text-title);
+}
+
+.veille-article-icone .icone {
+    width: 40px;
+    height: 40px;
+}
+
+.veille-article-contenu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.veille-article-titre {
+    font-size: var(--fs-card-title);
+}
+
+.veille-article-meta {
+    font-size: var(--fs-meta);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.veille-article-resume {
+    font-size: var(--fs-small);
+    line-height: 1.45;
+    color: var(--text-body);
+}
+
+/* Bouton toujours en bas à droite de la carte */
+.veille-article-contenu .bouton {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .veilles {
+        gap: 60px;
+    }
+
+    .veille-articles {
+        grid-template-columns: 1fr;
+    }
+
+    /* Image au-dessus du texte */
+    .veille-article {
+        flex-direction: column;
+    }
+
+    .veille-article-image {
+        width: 100%;
+    }
+}
