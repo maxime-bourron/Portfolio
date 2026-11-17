@@ -54,3 +54,21 @@ main {
         gap: 100px;
     }
 }
+
+
+/* ---------- Lien d'évitement ---------- */
+.lien-evitement {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    border-radius: var(--radius-btn);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-weight: 600;
+}
+
+.lien-evitement:focus {
+    top: 20px;
+}

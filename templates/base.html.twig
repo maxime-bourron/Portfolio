@@ -23,6 +23,8 @@
         {% endif %}
     </head>
     <body>
+        <a href="#contenu" class="lien-evitement">Aller au contenu</a>
+
         <header data-controller="header" data-action="scroll@window->header#update">
             <a href="{{ path('app_accueil') }}">
                 <div class="name">
@@ -30,18 +32,23 @@
                 </div>
             </a>
 
-            <button type="button" class="burger-menu" aria-label="Ouvrir le menu" data-header-target="burger" data-action="click->header#toggle">
+            <button type="button" class="burger-menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu" data-header-target="burger" data-action="click->header#toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav data-header-target="nav">
-                <a href="{{ path('app_accueil') }}" class="nav-link {{ app.current_route starts with 'app_accueil' ? 'active' : '' }}" data-action="click->header#close">Accueil</a>
-                <a href="{{ path('app_formations') }}" class="nav-link {{ app.current_route starts with 'app_formation' ? 'active' : '' }}" data-action="click->header#close">Formations</a>
-                <a href="{{ path('app_experiences') }}" class="nav-link {{ app.current_route starts with 'app_experience' ? 'active' : '' }}" data-action="click->header#close">Expériences</a>
-                <a href="{{ path('app_projets') }}" class="nav-link {{ app.current_route starts with 'app_projet' ? 'active' : '' }}" data-action="click->header#close">Projets</a>
-                <a href="{{ path('app_veilles') }}" class="nav-link {{ app.current_route starts with 'app_veille' ? 'active' : '' }}" data-action="click->header#close">Veilles</a>
+            <nav id="menu" aria-label="Menu principal" data-header-target="nav">
+                {% for lien in [
+                    {route: 'app_accueil', prefixe: 'app_accueil', texte: 'Accueil'},
+                    {route: 'app_formations', prefixe: 'app_formation', texte: 'Formations'},
+                    {route: 'app_experiences', prefixe: 'app_experience', texte: 'Expériences'},
+                    {route: 'app_projets', prefixe: 'app_projet', texte: 'Projets'},
+                    {route: 'app_veilles', prefixe: 'app_veille', texte: 'Veilles'},
+                ] %}
+                    {% set actif = app.current_route starts with lien.prefixe %}
+                    <a href="{{ path(lien.route) }}" class="nav-link{{ actif ? ' active' }}"{% if actif %} aria-current="page"{% endif %} data-action="click->header#close">{{ lien.texte }}</a>
+                {% endfor %}
             </nav>
         </header>
 
