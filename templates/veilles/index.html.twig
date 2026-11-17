@@ -3,5 +3,33 @@
 {% block title %}Portfolio - Maxime Bourron - Veilles{% endblock %}
 
 {% block body %}
-<main><h1>Mes veilles</h1></main>
+<main class="veilles">
+    <h1>Veilles technologiques</h1>
+
+    {% for veille in veilles %}
+        <section class="veilles-section">
+            <div class="veille-entete">
+                <h2>{{ veille.titre }}</h2>
+                <p class="veille-presentation">{{ veille.presentation|nl2br }}</p>
+            </div>
+
+            <div class="veille-articles">
+                {% for article in veille.articles %}
+                    <article class="carte veille-article" data-controller="reveal">
+                        {% if article.image %}
+                            <img src="{{ asset('images/' ~ article.image) }}" alt="" class="veille-article-image">
+                        {% endif %}
+
+                        <div class="veille-article-contenu">
+                            <h3 class="veille-article-titre">{{ article.titre }}</h3>
+                            <p class="veille-article-meta">{{ article.source }} · {{ article.datePublication|format_date(pattern: 'd MMMM yyyy') }}</p>
+                            <p class="veille-article-resume">{{ article.resume }}</p>
+                            <a href="{{ article.url }}" class="bouton bouton-plein bouton-petit" target="_blank" rel="noopener">Lire l'article</a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+    {% endfor %}
+</main>
 {% endblock %}
