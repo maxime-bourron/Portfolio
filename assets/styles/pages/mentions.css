@@ -1,0 +1,36 @@
+/* ==========================================================================
+    Mentions légales
+    Éditeur, hébergement, données personnelles, cookies et crédits
+   ========================================================================== */
+
+/* ---------- Page ---------- */
+/* Contenu plus étroit que le site pour garder un texte lisible */
+.mentions {
+    max-width: 1000px;
+    gap: 50px;
+}
+
+
+/* ---------- Sections ---------- */
+.mentions-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mentions-section a {
+    text-decoration: underline;
+    color: var(--text-title);
+}
+
+.mentions-liste {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: var(--fs-body);
+    line-height: 1.55;
+    color: var(--text-body);
+}

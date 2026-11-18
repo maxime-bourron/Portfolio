@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio - Maxime Bourron - Mentions légales et confidentialité{% endblock %}
+{% block description %}Mentions légales, données personnelles et cookies du portfolio de Maxime Bourron.{% endblock %}
+
+{% block body %}
+<main id="contenu" class="mentions">
+    <h1>Mentions légales et confidentialité</h1>
+
+    <section class="mentions-section">
+        <h2>Éditeur du site</h2>
+        <p>Ce site est le portfolio personnel de {{ profil.prenom }} {{ profil.nom }}, étudiant en BTS SIO option SLAM.</p>
+        <p>Contact : <a href="mailto:{{ profil.email }}">{{ profil.email }}</a></p>
+    </section>
+
+    <section class="mentions-section">
+        <h2>Hébergement</h2>
+        <p>OVH SAS<br>2 rue Kellermann, 59100 Roubaix, France<br><a href="https://www.ovhcloud.com" target="_blank" rel="noopener">www.ovhcloud.com</a></p>
+    </section>
+
+    <section class="mentions-section">
+        <h2>Données personnelles</h2>
+        <p>Ce site ne collecte aucune donnée personnelle sur ses visiteurs : il n'y a ni formulaire, ni compte utilisateur, ni outil de statistiques.</p>
+        <p>Comme tout serveur web, le serveur qui héberge ce site enregistre des journaux techniques (adresse IP, date et page demandée). Ils servent uniquement à la sécurité et au bon fonctionnement du site, ne sont transmis à personne et sont supprimés automatiquement après 6 mois.</p>
+        <p>Les seules données personnelles affichées sont celles de l'éditeur, publiées par lui-même. Conformément au RGPD, vous pouvez exercer vos droits ou poser une question par email à l'adresse ci-dessus, et adresser une réclamation à la <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>.</p>
+    </section>
+
+    <section class="mentions-section">
+        <h2>Cookies</h2>
+        <p>Ce site n'utilise aucun cookie, ni de mesure d'audience, ni publicitaire. C'est pourquoi aucun bandeau de consentement n'est affiché.</p>
+        <p>La police d'écriture est hébergée directement sur ce site : aucune requête n'est envoyée à un service tiers comme Google Fonts lors de votre visite.</p>
+    </section>
+
+    <section class="mentions-section">
+        <h2>Propriété intellectuelle et crédits</h2>
+        <p>Les textes, captures d'écran et le code de ce site sont la propriété de leur auteur. Les logos des entreprises et des établissements appartiennent à leurs propriétaires respectifs et ne sont utilisés que pour illustrer le parcours.</p>
+        <ul class="mentions-liste">
+            <li>Police Pridi : licence SIL Open Font License 1.1</li>
+            <li>Icônes de la veille : <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>, licence ISC</li>
+            <li>Site développé avec Symfony</li>
+        </ul>
+    </section>
+</main>
+{% endblock %}

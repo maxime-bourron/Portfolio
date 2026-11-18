@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for route in ['app_accueil', 'app_formations', 'app_experiences', 'app_projets', 'app_veilles'] %}
+    {% for route in ['app_accueil', 'app_formations', 'app_experiences', 'app_projets', 'app_veilles', 'app_mentions_legales'] %}
         <url><loc>{{ url(route) }}</loc></url>
     {% endfor %}
     {% for formation in formations %}

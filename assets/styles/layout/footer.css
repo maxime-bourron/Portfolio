@@ -1,6 +1,6 @@
 /* ==========================================================================
     Footer
-    Pied de page avec séparateur et copyright
+    Pied de page avec séparateur, copyright et lien vers les mentions légales
    ========================================================================== */
 
 /* ---------- Pied de page ---------- */
@@ -21,10 +21,28 @@ footer {
     flex-direction: column;
     align-items: center;
     align-self: stretch;
+    gap: 8px;
 }
 
 footer p {
     font-size: var(--fs-footer);
     color: var(--text-title);
     text-align: center;
+}
+
+
+/* ---------- Lien des mentions légales ---------- */
+.footer-lien {
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.footer-lien:hover {
+    color: var(--text-title);
+}
+
+.footer-lien:focus-visible {
+    outline: 2px solid var(--text-title);
+    outline-offset: 4px;
 }
