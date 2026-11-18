@@ -16,8 +16,10 @@
             </div>
 
             <div class="presentation-action">
-                <a href="#" class="bouton bouton-plein">Mon CV</a>
-                <a href="#" class="bouton bouton-contour">Me contacter</a>
+                {% if profil.cv %}
+                    <a href="{{ asset('documents/' ~ profil.cv) }}" class="bouton bouton-plein" target="_blank" rel="noopener">Mon CV</a>
+                {% endif %}
+                <a href="mailto:{{ profil.email }}" class="bouton bouton-contour">Me contacter</a>
             </div>
         </div>
         <img src="{{ asset('images/' ~ profil.photo) }}" alt="Photo de profil" class="presentation-img" data-controller="reveal">
