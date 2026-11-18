@@ -101,8 +101,4 @@
     .veille-article {
         flex-direction: column;
     }
-
-    .veille-article-image {
-        width: 100%;
-    }
 }
