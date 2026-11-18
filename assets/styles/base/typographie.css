@@ -1,7 +1,34 @@
 /* ==========================================================================
     Typographie
-    Titres, paragraphes, liens et texte en dégradé
+    Police, titres, paragraphes, liens et texte en dégradé
    ========================================================================== */
+
+/* ---------- Police ---------- */
+/* Pridi hébergée sur le site : aucune requête vers Google Fonts */
+@font-face {
+    font-family: 'Pridi';
+    src: url('../../fonts/pridi-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pridi';
+    src: url('../../fonts/pridi-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pridi';
+    src: url('../../fonts/pridi-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 /* ---------- Réinitialisation ---------- */
 h1, h2, h3, p {
