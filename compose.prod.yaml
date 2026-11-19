@@ -1,0 +1,50 @@
+# Stack de production, déployée avec Portainer depuis ce dépôt
+services:
+  portfolio:
+    build: .
+    container_name: portfolio
+    restart: unless-stopped
+    environment:
+      APP_SECRET: ${APP_SECRET}
+      DATABASE_URL: mysql://portfolio:${MYSQL_PASSWORD}@portfolio-db:3306/portfolio?serverVersion=8.4.7&charset=utf8mb4
+      DEFAULT_URI: https://maxime-bourron.bts-sio.fr
+    volumes:
+      - /srv/portfolio/documents:/app/public/documents:ro
+    depends_on:
+      - portfolio-db
+    networks:
+      - proxy
+      - portfolio
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  portfolio-db:
+    image: mysql:8.4
+    container_name: portfolio-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: portfolio
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - portfolio-db:/var/lib/mysql
+    networks:
+      - proxy
+      - portfolio
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  portfolio-db:
+
+networks:
+  proxy:
+    external: true
+  portfolio:

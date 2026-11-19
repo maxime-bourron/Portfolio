@@ -13,3 +13,9 @@ when@test:
         test: true
         session:
             storage_factory_id: session.storage.factory.mock_file
+
+when@prod:
+    framework:
+        # Le site est derrière Nginx Proxy Manager : on fait confiance à ses en-têtes pour connaître le HTTPS et le domaine
+        trusted_proxies: 'private_ranges'
+        trusted_headers: ['x-forwarded-for', 'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-port']
