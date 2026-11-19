@@ -2,6 +2,7 @@
 services:
   portfolio:
     build: .
+    pull_policy: build
     container_name: portfolio
     restart: unless-stopped
     environment:
@@ -47,4 +48,5 @@ volumes:
 networks:
   proxy:
     external: true
+    name: proxy_default
   portfolio:
