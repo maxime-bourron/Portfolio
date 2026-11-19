@@ -1,13 +1,14 @@
 # Image de production du portfolio : PHP 8.4 avec le serveur FrankenPHP
 FROM dunglas/frankenphp:1-php8.4
 
-RUN install-php-extensions pdo_mysql intl opcache
+RUN install-php-extensions pdo_mysql intl opcache zip
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 ENV APP_ENV=prod \
     APP_DEBUG=0 \
-    SERVER_NAME=:80
+    SERVER_NAME=:80 \
+    COMPOSER_ALLOW_SUPERUSER=1
 
 WORKDIR /app
 
