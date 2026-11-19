@@ -14,8 +14,7 @@ services:
     depends_on:
       - portfolio-db
     networks:
-      - proxy
-      - portfolio
+      - public-net
     logging:
       driver: json-file
       options:
@@ -34,8 +33,7 @@ services:
     volumes:
       - portfolio-db:/var/lib/mysql
     networks:
-      - proxy
-      - portfolio
+      - public-net
     logging:
       driver: json-file
       options:
@@ -46,7 +44,5 @@ volumes:
   portfolio-db:
 
 networks:
-  proxy:
+  public-net:
     external: true
-    name: proxy_default
-  portfolio:
